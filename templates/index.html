@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F2F2F2;
+        }
+        
+        h1 {
+            font-size: 36px;
+            color: #404040;
+            margin-bottom: 20px;
+        }
+        
+        form {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #BBBBBB;
+            text-align: left;
+        }
+        
+        label {
+            font-size: 18px;
+            color: #404040;
+            margin-bottom: 10px;
+        }
+        
+        input[type="text"], input[type="password"] {
+            font-size: 18px;
+            padding: 10px;
+            width: calc(100% - 20px);
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        button[type="submit"] {
+            font-size: 18px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        p {
+            font-size: 18px;
+            color: #404040;
+            margin-top: 20px;
+        }
+        
+        a {
+            color: #0000FF;
+        }
+    </style>
+</head>
+<body>
+    <div align="center">
+        <div><h1>Login Page</h1></div>
+        <div>
+            <form action="{{url_for('login')}}" method="POST">
+                <div>{{ message }}</div> <br><br>
+                <label>User Name : </label><input id="username" name="username" type="text" placeholder="User Name" autocomplete="off"/> <br><br>
+                <label>Password : </label><input id="password" name="password" type="password" placeholder="Password" autocomplete="off"/> <br><br>
+                <button id="submit" name="submit">Sign in</button>
+            </form>
+        </div>
+        <p>Don't have an account? Please click <a href="{{url_for('registration')}}">here</a></p>
+    </div>
+</body>
+</html>
